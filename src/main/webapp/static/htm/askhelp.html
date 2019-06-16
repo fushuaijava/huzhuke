@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui">
+<meta name="format-detection" content="telephone=no" />
+<title>互助客</title>
+<link rel="shortcut icon" href="../images/favicon.ico" />
+<link rel="stylesheet" type="text/css" href="iconfont/iconfont.css" />
+<link rel="stylesheet" type="text/css" href="../css/main.css" />
+</head>
+
+<body>
+<div class="askhelp wrap">
+	<div class="secheader pr">
+    	<a href="index.html"><i class="iconfont">&#xe629;</i></a>
+        <span>求助记录</span>
+    </div>
+    <div class="conWrap">
+        <div class="headerBl"></div>
+        <div class="tripInfo">
+            <ul id="askhelpul">
+				<script id="askhelptpl" type="text/template">
+				{@each content as helpinfo,index}
+                <li>
+                    <ul>
+                      <li class="liHover"><a href="#">${helpinfo.createTime|datebuild}<span class="fr">待帮助<i class="iconfont">&#xe62e;</i></span></a></li>
+                      <li><span>求助语：</span><div>${helpinfo.helpInfo}！</div></li>
+                      <li><span>悬赏币：</span><div>${helpinfo.coin}</div></li>
+                {@if helpinfo.state<2&&helpinfo.tHelpInfoReplys!="undefined"&&helpinfo.tHelpInfoReplys!='null'&&helpinfo.tHelpInfoReplys!=null}
+                
+                    {@each helpinfo.tHelpInfoReplys.content as helpReply}
+                      <li class="liUser"><span><i class="portrait"></i>${helpReply.tUser.nickname}：</span><div>${helpReply.replyInfo}</div></li>
+                <li><span>联系方式：</span><div>${helpReply.tUser.mobilephone}</div></li>
+                      <li class="lastLi"><a class="liHover">和他聊天</a><a class="liHover acceptbtn"  data-help-info-id="${helpinfo.id}" data-help-user-id="${helpReply.userId}" data-help-reply-id="${helpReply.id}">接受帮助</a></li>
+                    {@/each}
+                {@/if}
+                {@if helpinfo.state<2}
+                      <li class="lastLi oneblue liHover"><a class="cancelhelpbtn" data-help-info-id="${helpinfo.id}" href="#">取消求助</a></li>
+                {@else if helpinfo.state>=2&&helpinfo.state<5}
+                      <li class="lastLi oneblue liHover"><a class="finishhelpbtn" data-help-info-id="${helpinfo.id}" href="#">帮助完成</a></li>
+                {@/if}            
+                    </ul>
+                </li>
+                {@/each}
+                </script>
+             <li>
+                <ul>
+                  <li class="liHover"><a href="#">2015.12.22 13:21:23<span class="fr">待帮助<i class="iconfont">&#xe62e;</i></span></a></li>
+                  <li><span>求助语：</span><div>我在海口没地方去了，求收留！</div></li>
+                  <li><span>悬赏币：</span><div>500</div></li>
+                  <li><span class="cont"><i class="portrait"></i>张小丰<br />我能帮你</span></li>
+                  <li class="lastLi"><a class="liHover">拒绝帮助</a><a class="liHover">接受帮助</a></li>
+                </ul>
+            </li><!--
+            <li>
+                <ul>
+                  <li class="liHover"><a href="#">2015.12.22 13:21:23<span class="fr">帮助中<i class="iconfont">&#xe62e;</i></span></a></li>
+                  <li><span>求助语：</span><div>我在海口没地方去了，求收留！</div></li>
+                  <li><span>悬赏币：</span><div>500</div></li>
+                  <li><span><i class="portrait"></i>张小丰</span></li>
+                  <li class="lastLi"><a class="liHover">拒绝帮助</a><a class="liHover">接受帮助</a></li>
+                </ul>
+            </li> -->
+            </ul>    
+        </div>
+    </div>
+    
+    <div id="helpsmscodediv" class="secWin">
+        <div class="secWrap"></div>
+        <div class="secWin_con">
+            <div class="div_title">帮助确认</div>
+            <p>请输入您收到的短信验证码:</p>
+            <div class="codeWrap"><span class="checkTxt"></span><input id="helpsmscode" type="text" maxlength="6" onkeyup="value=value.replace(/\s/g,'')"><input id="helpid" type="hidden" /></div>
+            <div class="secWin_btn"><button>取消 </button><button id="helpbtn" >确定 </button></div>
+        </div>
+    </div>
+
+</div>
+</body>
+<script type="text/javascript" data-main="../js/my/help/askhelp" src="../js/require.js"></script>
+</html>

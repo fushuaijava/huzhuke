@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui">
+<meta name="format-detection" content="telephone=no" />
+<title>互助客</title>
+<link rel="shortcut icon" href="../images/favicon.ico" />
+<link rel="stylesheet" type="text/css" href="iconfont/iconfont.css" />
+<link rel="stylesheet" type="text/css" href="../css/main.css" />
+
+</head>
+
+<body>
+<div class="myInviteEdit wrap">
+	<div class="secheader pr">
+    	<a href="beGuest.html"><i class="iconfont">&#xe629;</i></a>
+        <span>做客主页编辑</span>
+    </div>
+    <div class="conWrap">
+        <div class="headerBl"></div>
+        <div class="perInfoEdit">
+        <input id="housemodel" type="hidden"/>
+            <ul>
+                <li class="unloadPt cover"><span>做客封面</span><div class="fileWrap"><div data-pindex="1" class="file" id="compressImage1"></div></div></li>
+                <li class="moreImg">其它图片</li>
+                <li class="unloadPt moreImgInp">
+                    <div data-pindex="2" class="fileWrap"><div data-pindex="2" class="file" id="compressImage2"></div></div>
+                    <div data-pindex="3" class="fileWrap"><div data-pindex="3" class="file" id="compressImage3"></div></div>
+                    <div data-pindex="4" class="fileWrap"><div data-pindex="4" class="file" id="compressImage4"></div></div>
+                    <div data-pindex="5" class="fileWrap"><div data-pindex="5" class="file" id="compressImage5"></div></div>
+                </li>
+                <li class="infoEditArea">
+                    <div><span>邀请介绍</span></div>
+                    <textarea id="smalldes"></textarea>
+                </li>
+                <li class="infoEditArea">
+                    <div><span>风景名胜</span></div>
+                    <textarea id="nearby"></textarea>
+                </li>
+                <li class="infoEditArea">
+                    <div><span>特色小吃</span></div>
+                    <textarea id="cate"></textarea>
+                </li>
+                <li class="perInfoEditLi liHover" id="citychange"><a><span>城市</span><em><b id="province"></b>&nbsp;<b id="city"></b><i class="iconfont">&#xe62e;</i></em></a></li>
+                <li class="perInfoEditLi"><span>具体地址</span><div class="inpWrap"><input id="address" type="text"</div>></li>
+                <li class="perInfoEditLi myHotelLi liHover"><span>是否可以借宿</span><em><i id="canlivetxt" class="myHotel">否</i><i class="iconfont">&#xe62e;</i></em></li>
+                <li class="perInfoEditLi goldLi"><span>预付金币</span><div class="inpWrap"><input id="minCoin" type="number" value="200"></div></li>
+                <li class="perInfoEditLi"><span>建议金币</span><div class="inpWrap"><input id="adviseCoin" type="number" value="1000"></div></li>
+                <li class="btnLi"><button id="savebtn" class="blueBtn">保存</button></li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="twoSel">
+    	<div class="secWrap"></div>
+        
+        <!--选择 是否可以借宿-->
+        <div class="selOp">
+            <ul>
+              <li class="sel1">是</li>
+              <li>否</li>
+            </ul>
+            <ul>
+           	  <li>取消</li>
+            </ul>
+        </div>
+        
+        <!--删除 重新上传 图片-->
+        <div class="reloadPt">
+            <ul>
+              <li class="sel1 removeImg">删除图片</li>
+              <li class="reChoose pr"><input type="file" accept="image/*">重新选择</li>
+            </ul>
+            <ul>
+           	  <li>取消</li>
+            </ul>
+        </div>
+        
+    </div>
+    
+</div>
+<!--<div id="procitydiv">
+				按省份选择： <select name="ddlProvince" id="ddlProvince"
+					onchange="selectMoreCity(this)">
+				</select> <select name="ddlCity" id="ddlCity">
+					<option selected value="">城市</option>
+				</select>
+	</div>
+-->
+</body>
+<script type="text/javascript" data-main="../js/my/house/myInviteEdit" src="../js/require.js"></script>
+</html>

@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui">
+<meta name="format-detection" content="telephone=no" />
+<title>互助客</title>
+<link rel="shortcut icon" href="../images/favicon.ico" />
+<link rel="stylesheet" type="text/css" href="iconfont/iconfont.css" />
+<link rel="stylesheet" type="text/css" href="../css/main.css" />
+<script src="../js/lib/lCalendar.min.js"></script>
+<link rel="stylesheet" href="../css/lCalendar.css">
+</head>
+
+<body>
+<div class="payconfirm wrap">
+	<div class="secheader pr">
+    	<a href="trip.html"><i class="iconfont">&#xe629;</i></a>
+        <span>支付确认</span>
+    </div>
+    <div class="conWrap">
+        <div class="headerBl"></div>
+        <form action="../../app/guestorder/create" method="post">
+        <div class="con">
+            <div class="condition">
+                <i class="iconfont colPi">&#xe61c;</i>
+                <i class="iconfont colYe">&#xe61d;</i>
+                <i class="iconfont colGr">&#xe61e;</i>
+                <i class="iconfont colCa">&#xe61f;</i>
+            </div>
+            <div id="housedetaildiv" class="goldNeed">
+            <script id="housedetailtpl" type="text/template">
+            <input id="datamodel"  data-user-coin="${tUser.coin}" data-house-mincoin="${house.minCoin}"  type="hidden"/>
+			<input name="houseId" value="${house.id}"  type="hidden"/>
+			{@if tUser.coin>=house.minCoin}		
+			<input id="hascoin" value="yes"  type="hidden"/>
+			{@else}
+			<input id="hascoin" value="false"  type="hidden"/>
+			{@/if}
+                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr class="tr1">
+                        <td width="50%" class="pr">您的金币数<span class="pa"></span></td>
+                        <td width="50%">每日所需金币数</td>
+                    </tr>
+                    <tr>
+                        <td>${tUser.coin}</td>
+                        <td>${house.minCoin}</td>
+                    </tr>
+                    <tr>
+                        <td><a class="liBtn" href="recharge.html">去充值</a></td>
+                    </tr>
+                    <tr>
+                        <td>到访日期</td>
+                        <td><input id="guestStartTime" name="guestStartTime" type=”date”/></td>
+                    </tr>
+                    <tr>
+                        <td>结束日期</td>
+                        <td><input id="guestEndTime" name="guestEndTime" type=”date”/></td>
+                    </tr>
+                </table>
+             </script>
+            </div>
+        </div>
+        <div class="btnLi">
+            <button id="submitbtn" class="blueBtn" type="submit">提交</button>
+        </div>
+        </form>
+    </div>
+</div>
+</body>
+<script type="text/javascript" data-main="../js/my/guestorder/payconfirm" src="../js/require.js"></script>
+
+</html>

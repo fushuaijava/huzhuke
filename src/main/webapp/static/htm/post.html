@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui">
+<meta name="format-detection" content="telephone=no" />
+<title>互助客</title>
+<link rel="shortcut icon" href="../images/favicon.ico" />
+<link rel="stylesheet" type="text/css" href="iconfont/iconfont.css" />
+<link rel="stylesheet" type="text/css" href="../css/main.css" />
+</head>
+
+<body>
+<div class="post wrap">
+	<div class="secheader pr">
+    	<a href="commun.html"><i class="iconfont">&#xe629;</i></a>
+        <span>我要发帖</span>
+    </div>
+    <div class="conWrap">
+        <div class="headerBl"></div>
+        <div class="perInfoEdit">
+            <form class="js_add_commun" action="#" method="post">
+            <ul>
+                <li class="infoEditArea">
+                    <div><span>内容描述</span><em>200</em></div>
+                    <textarea name="content"></textarea>
+                </li>
+                <li class="moreImg">上传图片</li>
+                <li class="unloadPt moreImgInp">
+                    <div class="fileWrap"><div class="file"></div></div>
+                    <div class="fileWrap"><div class="file"></div></div>
+                    <div class="fileWrap"><div class="file"></div></div>
+                    <div class="fileWrap"><div class="file"></div></div>
+                </li>
+                <li class="btnLi"><button type="submit" class="blueBtn">提交</button></li>
+            </ul>
+            </form>
+        </div>
+    </div>
+
+    <div class="twoSel">
+    	<div class="secWrap"></div>
+
+        <!--删除 重新上传 图片-->
+        <div class="reloadPt">
+            <ul>
+              <li class="sel1 removeImg">删除图片</li>
+              <li class="reChoose pr"><input type="file" accept="image/*">重新选择</li>
+            </ul>
+            <ul>
+           	  <li>取消</li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+<script type="text/javascript" data-main="../js/bbs/bbsconfig" src="../js/require.js"></script>
+</body>
+</html>

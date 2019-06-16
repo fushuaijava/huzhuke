@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui">
+<meta name="format-detection" content="telephone=no" />
+<title>互助客</title>
+<link rel="shortcut icon" href="../images/favicon.ico" />
+<link rel="stylesheet" type="text/css" href="iconfont/iconfont.css" />
+<link rel="stylesheet" type="text/css" href="../css/main.css" />
+<script type="text/javascript" data-main="../js/login/loginIn" src="../js/require.js"></script>
+</head>
+
+<body>
+<div class="loginIn wrap">
+	<div class="secheader pr">
+    	<a href="index.html"><i class="iconfont">&#xe629;</i></a>
+        <span>登录</span>
+    </div>
+    <div class="conWrap">
+        <div class="headerBl"></div>
+        <div class="logoWrap">
+            <span class="vamSpan"></span>
+            <div class="logo"><i class="iconfont">&#xe62d;</i></div>
+        </div>
+        <div class="loginInpWrap pr">
+            <div class="loginInp pr">
+              <form class="js_login_form" method="post">
+                <ul>
+                  <li class="li01"><i class="iconfont pa">&#xe60e;</i><div><input id="js_phone" class="txtInp grey telInp js_phone" type="text" name="valid_phone" value="请输入手机号码" maxlength="11" onkeyup="value=value.replace(/\s/g,'')"><span class="checkTxt"></span><button type="button" class="sendCd dnIm">发送验证码</button></div></li>
+                  <li class="li02"><i class="iconfont pa">&#xe60f;</i><div><input id="js_phone_code" class="txtInp grey codeInp js_phone_code" type="text" name="valid_code" value="请输入验证码" maxlength="6" onkeyup="value=value.replace(/\s/g,'')"><span class="checkTxt"></span></div></li>
+                  <li class="tac"><input type="submit" class="login-btn blue" value="登录"></li>
+                </ul>
+              </form>
+            </div>
+            <span class="span1"></span><span class="span2"></span>
+        </div>
+        <p class="noCode">收不到验证码？<br />请联系客服：<a href="tel:0898-68663473">0898-68663473</a></p>
+    </div>
+</div>
+</body>
+</html>

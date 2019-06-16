@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui">
+<meta name="format-detection" content="telephone=no" />
+<title>互助客</title>
+<link rel="shortcut icon" href="../images/favicon.ico" />
+<link rel="stylesheet" type="text/css" href="iconfont/iconfont.css" />
+<link rel="stylesheet" type="text/css" href="font_new/iconfont.css" />
+<link rel="stylesheet" type="text/css" href="../css/main.css" />
+<script type="text/javascript" data-main="../js/my/recharge" src="../js/require.js"></script>
+</head>
+
+<body>
+<div class="recharge wrap">
+	<div class="secheader pr">
+    	<a href="index.html"><i class="iconfont">&#xe629;</i></a>
+        <span>充值中心</span>
+    </div>
+    <div class="conWrap">
+        <div class="headerBl"></div>
+        <div class="balance">
+            <p>当前金币余额数<a href="#"><i class="iconfont">&#xe60a;</i></a></p>
+            <div class="balanceNum">1000</div>
+        </div>
+        <div class="rechargeM rechargeGold">
+            <p>金币充值<span class="red"></span></p>
+            <div class="rechargeSel pr">
+                <div class="selLeft pa">
+                    <span class="vamSpan"></span>
+                    <span class="optionWrap"><a class="opSelted"><em></em></a></span>
+                </div>
+                <div class="selRight">
+                    <ul id="coinparentul">
+    <script id="cointpl" type="text/template">
+                    {@each content as product,index}
+                        <li data-id="${product.id}" data-product-type="${product.productType}" willCost="${product.nowMoney}"><span>${product.productName}</span></li>
+                    {@/each}
+    </script>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="rechargeM rechargeVIP">
+            <p>VIP充值<span>0元</span></p>
+            <div class="rechargeSel pr">
+                <div class="selLeft pa">
+                    <span class="vamSpan"></span>
+                    <span class="optionWrap"><a class="opSelted dnIm"><em></em></a></span>
+                </div>
+                <div class="selRight">
+                    <ul id="vipparentul">
+    <script id="viptpl" type="text/template">
+                    {@each content as product,index}
+                        <li data-id="${product.id}" data-product-type="${product.productType}" willCost="${product.nowMoney}"><span>${product.productName}</span></li>
+                    {@/each}
+    </script>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="rechargePay">
+            <ul>
+                <li class="liHover paybtn" ><a href="#"><i class="iconfont">&#xe60b;</i><span>支付宝支付</span><i class="iconfont fr">&#xe62e;</i></a></li>
+                <li class="liHover paybtn2" ><a href="#"><i class="iconfont">&#xe7b0;</i><span>微信支付</span><i class="iconfont fr">&#xe62e;</i></a></li>
+                <!-- <li class="liHover"><a href="#"><i class="iconfont">&#xe60c;</i><span>银行卡支付</span><i class="iconfont fr">&#xe62e;</i></a></li> -->
+            </ul>
+        </div>
+    </div>
+</div>
+<form id="myFormId" name="myForm" action="" method="post">
+<input name="orderid" id="orderid" type="hidden">
+</form>
+</body>
+</html>

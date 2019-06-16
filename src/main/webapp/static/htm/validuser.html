@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui">
+<meta name="format-detection" content="telephone=no" />
+<title>互助客</title>
+<link rel="shortcut icon" href="../images/favicon.ico" />
+<link rel="stylesheet" type="text/css" href="iconfont/iconfont.css" />
+<link rel="stylesheet" type="text/css" href="../css/main.css" />
+<script type="text/javascript" data-main="../js/my/userinfo/validuser" src="../js/require.js"></script>
+</head>
+
+<body>
+<div class="perInfo" id="validuserdiv">
+<script id="validusertpl" type="text/template">
+<ul >
+	{@each content as tUserinfo,index}
+	<li class="perInfoEditLi"><span>真实姓名:${tUserinfo.name}</span></li>
+	<li class="perInfoEditLi"><span>身份证号:${tUserinfo.idcard}</span></li>
+	<li class="perInfoEditLi cardEd">
+		<a><span>身份证照片上传</span></a>
+		<div>
+			<img src="${tUserinfo.cardImg1|photopath}"/>
+			<img src="${tUserinfo.cardImg2|photopath}"/>
+		</div>
+	</li>
+	<li class="perInfoEditLi">
+	<button class="passbtn"  type="button" data-id="${tUserinfo.id}" data-state="1">通过  </button>	
+	<button class="passbtn"  type="button" data-id="${tUserinfo.id}" data-state="2" >不通过</button>	
+	</li>
+	{@/each}
+</ul>
+</script>
+</div>
+</body>
+</html>

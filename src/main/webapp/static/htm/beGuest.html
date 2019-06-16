@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui">
+<meta name="format-detection" content="telephone=no" />
+<title>互助客</title>
+<link rel="shortcut icon" href="../images/favicon.ico" />
+<link rel="stylesheet" type="text/css" href="iconfont/iconfont.css" />
+<link rel="stylesheet" type="text/css" href="../css/main.css" />
+<script type="text/javascript" data-main="../js/my/beGuest" src="../js/require.js"></script>
+</head>
+
+<body>
+<div class="beGuest wrap">
+    <div class="header">
+        <label class="search" for="search_beG"><input id="search_beG" type="text" class="txtInp grey" value="查找景点和特色小吃"><i class="iconfont">&#xe630;</i></label>
+        <a href="myInviteEdit.html" class="txtIcon"><span>邀请</span><i class="iconfont">&#xe628;</i></a>
+    </div>
+    <div class="conWrap">
+        <div class="headerBl"></div>
+        <div id="beGuestlist">
+    	<script id="housetpl" type="text/template">
+		{@each content as house,index}
+		<a href="hisInvite.html?id=${house.id}">
+			<div class="indexCon con">
+				<div class="conTop">
+					<span class="fl">
+						{@if house.tUser.headimg!=null}
+						<i class="portrait" style="background-image:url(${house.tUser.headimg|photopath})"></i>
+						{@else}
+						<i class="portrait"></i>
+						{@/if}					
+					</span>
+					<div class="conTopR">
+						<p class="p1">${house.tUser.nickname}<i class="iconfont">&#xe609;</i></p>
+						<p class="p2">
+							<em>LV${house.tUser.userLevel}</em>{@if house.tUser.isValidInfo==1}<em class="em2">已认证</em>{@/if}
+							<span class="fr">
+								<i class="iconfont">&#xe625;</i><em>${house.score}</em>
+								<i class="iconfont">&#xe626;</i><em>${house.total}</em>
+							</span>
+						</p>
+					</div>
+				</div>
+				{@if house.compressImage1!=null}
+				<div class="photo"><div class="imgWrap"><img class="lazy" src="${house.compressImage1|photopath}" data-original="${house.compressImage1|photopath}"></div></div>
+				{@/if}
+				<div class="conBot">
+					<ul>
+					  <li>
+						<i class="iconfont">&#xe622;</i>
+						<p>风景名胜：${house.nearby==null?"":house.nearby}</p>
+					  </li>
+					  <li>
+						<i class="iconfont">&#xe623;</i>
+						<p>特色小吃：${house.cate==null?"":house.cate}</p>
+					  </li>
+					  <li>
+						<i class="iconfont">&#xe624;</i>
+						<p>${house.smalldes==null?"":house.smalldes}</p>
+					  </li>
+					</ul>
+				</div>
+			</div>
+		</a>
+		{@/each}
+		</script>
+		</div>
+        <div class="waitMore"><img src="../images/loading.gif">加载中...</div>
+        <div data-pageid="0" data-canload="yes" class="more loadmorepage">点击加载更多</div>
+        <div class="error"><div class="secWrap"></div><span><i class="iconfont">&#xe631;</i><em>加载失败！</em></span></div>
+        <div class="footBl"></div>
+    </div>
+    <div class="footer">
+        <ul>
+          <li><a href="index.html"><i class="iconfont">&#xe618;</i><span>首页</span></a></li>
+          <li class="current"><a href="beGuest.html"><i class="iconfont">&#xe605;</i><span>做客</span></a></li>
+          <li><a href="commun.html"><i class="iconfont">&#xe61a;</i><span>交流</span></a></li>
+          <li><a href="help.html"><i class="iconfont">&#xe61b;</i><span>帮助</span></a></li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>

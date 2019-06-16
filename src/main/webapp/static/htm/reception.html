@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui">
+<meta name="format-detection" content="telephone=no" />
+<title>互助客</title>
+<link rel="shortcut icon" href="../images/favicon.ico" />
+<link rel="stylesheet" type="text/css" href="iconfont/iconfont.css" />
+<link rel="stylesheet" type="text/css" href="../css/main.css" />
+</head>
+
+<body>
+<div class="reception wrap">
+    <div class="secheader pr">
+        <a href="index.html"><i class="iconfont">&#xe629;</i></a> <span>接待安排</span>
+    </div>
+    <div class="conWrap">
+        <div class="headerBl"></div>
+        <div class="tripInfo">
+            <ul id="receptionul">
+			<script id="receptiontpl" type="text/template">
+			{@each content as guestorder}
+				<li>
+					<ul>
+					  <li class="liHover"><a href="#">${guestorder.createTime|datebuild}<span class="fr">
+			
+			{@if guestorder.orderState==0}
+			待支付
+			{@else if guestorder.orderState==1}
+			已预定
+			{@else if guestorder.orderState==2}
+			已接单
+			{@else if guestorder.orderState==3}
+			开始做客
+			{@else if guestorder.orderState==4}
+			做客完成
+			{@else if guestorder.orderState==5}
+			已评价
+			{@else if guestorder.orderState==11}
+			客人取消
+			{@else if guestorder.orderState==12}
+			主人取消
+			{@/if}  
+					<i class="iconfont">&#xe62e;</i></span></a>
+				</li>
+				<li><span>目的地：</span><div>${guestorder.tHouse.address}</div></li>
+				<li><span>访问人：</span><div>${guestorder.guestUser.nickname}</div></li>
+				<li><span>金币数：</span><div>${guestorder.totalPay}</div></li>
+    
+				<li class="lastLi oneblue liHover">
+				{@if guestorder.orderState==0}
+				{@else if guestorder.orderState==1}
+				<a class="acceptbtn" data-guest-order-id="${guestorder.id}" href="#">接单</a>
+				{@else if guestorder.orderState==2}
+				<a class="confirmstartbtn" data-guest-order-id="${guestorder.id}" href="#">确认开始</a>
+				{@else if guestorder.orderState==3}
+				{@else if guestorder.orderState==4}
+				{@/if}
+				
+				{@if guestorder.orderState<3}
+				<a class="cancelguestbtn" data-guest-order-id="${guestorder.id}" data-guest-order-state="11" href="#">取消行程</a>
+				{@/if}
+				{@if guestorder.orderState<6}
+				<!--<a class="cutcoinbtn" data-guest-order-id="${guestorder.id}" href="#">减免金币</a>-->
+				{@/if}
+				</li>
+            </ul>
+        </li>
+    {@/each}
+    </script>
+            </ul>
+        </div>
+    </div>
+    
+    <div id="guestordersmscodediv" class="secWin">
+        <div class="secWrap"></div>
+        <div class="secWin_con">
+            <div class="div_title">帮助确认</div>
+            <p>请输入您收到的短信验证码:</p>
+            <input id="guestordersmscode" type="text"><input id="guestOrderId"
+                type="hidden" />
+            <div class="secWin_btn">
+                <button>取消</button>
+                <button id="gobtn">确定</button>
+            </div>
+        </div>
+    </div>
+    
+</div>
+</body>
+<script type="text/javascript" data-main="../js/my/guestorder/reception" src="../js/require.js"></script>
+</html>

@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui">
+<meta name="format-detection" content="telephone=no" />
+<title>互助客</title>
+<link rel="shortcut icon" href="../images/favicon.ico" />
+<link rel="stylesheet" type="text/css" href="iconfont/iconfont.css" />
+<link rel="stylesheet" type="text/css" href="../css/main.css" />
+
+</head>
+
+<body>
+<div class="help wrap">
+    <div class="header">
+        <div class="centerTxt">帮助中心</div>
+        <a href="pohelp.html" class="txtIcon"><span>求助</span><i class="iconfont">&#xe614;</i></a>
+    </div>
+    <div class="conWrap">
+        <div class="headerBl"></div>
+    	<div class="tipTxt">点击帮助TA后查看对方联系电话<i class="iconfont">&#xe615;</i></div>
+        <div id="helplist">
+    	<script id="helptpl" type="text/template">
+		{@each content as helpinfo,index}
+        <div class="indexCon con">
+            <div class="conTop">
+                <span class="fl">
+{@if helpinfo.tUser.headimg!=null}
+						<i class="portrait" style="background-image:url(${helpinfo.tUser.headimg|photopath})"></i>
+{@else}
+						<i class="portrait"></i>
+{@/if}
+				</span>
+                <div class="conTopR">
+                    <p class="p1">${helpinfo.tUser.nickname}<i class="iconfont">&#xe609;</i>
+                        <span class="fr">
+                            <i class="iconfont">&#xe616;</i><em>${helpinfo.coin}</em>
+                        </span>
+                    </p>
+                    <p class="p2">
+                        <em>LV${helpinfo.tUser.userLevel}</em>{@if helpinfo.tUser.isValidInfo==1}<em class="em2">已认证</em>{@/if}
+                        <span class="fr">${helpinfo.createTime|datebuild}</span>
+                    </p>
+                </div>
+            </div>
+            <p class="conTxt">${helpinfo.helpInfo}</p>
+            <div class="conBot liHover"><a href="helpDetail.html?id=${helpinfo.id}"><i class="iconfont">&#xe617;</i>我要帮TA</a></div>
+        </div>
+		{@/each}
+		</script>
+       <!-- <div class="indexCon con">
+            <div class="conTop">
+                <span class="fl"><i class="portrait"></i></span>
+                <div class="conTopR">
+                    <p class="p1">Amy<i class="iconfont">&#xe609;</i>
+                        <span class="fr">
+                            <i class="iconfont">&#xe616;</i><em>3000</em>
+                        </span>
+                    </p>
+                    <p class="p2">
+                        <em>LV8</em><em class="em2">已认证</em>
+                        <span class="fr">12.22 12:13</span>
+                    </p>
+                </div>
+            </div>
+            <p class="conTxt">各位海口的故友，有人可以收留我一晚上吗，刚到海口还没有找好落脚的底，仅限女性啦！</p>
+            <div class="conBot liHover"><a href="helpDetail.html"><i class="iconfont">&#xe617;</i>我要帮TA</a></div>
+        </div>
+        <div class="indexCon con">
+            <div class="conTop">
+                <span class="fl"><i class="portrait"></i></span>
+                <div class="conTopR">
+                    <p class="p1">Amy<i class="iconfont">&#xe609;</i>
+                        <span class="fr">
+                            <i class="iconfont">&#xe616;</i><em>3000</em>
+                        </span>
+                    </p>
+                    <p class="p2">
+                        <em>LV8</em><em class="em2">已认证</em>
+                        <span class="fr">12.22 12:13</span>
+                    </p>
+                </div>
+            </div>
+            <p class="conTxt">各位海口的故友，有人可以收留我一晚上吗，刚到海口还没有找好落脚的底，仅限女性啦！</p>
+            <div class="conBot liHover"><a href="helpDetail.html"><i class="iconfont">&#xe617;</i>我要帮TA</a></div>
+        </div> -->
+        </div>
+        <div class="waitMore"><img src="../images/loading.gif">加载中...</div>
+        <div data-pageid="0" data-canload="yes" class="more  loadmorepage">点击加载更多</div>
+        <div class="error"><div class="secWrap"></div><span><i class="iconfont">&#xe631;</i><em>加载失败！</em></span></div>
+        <div class="footBl"></div>
+    </div>
+    <div class="footer">
+        <ul>
+          <li><a href="index.html"><i class="iconfont">&#xe618;</i><span>首页</span></a></li>
+          <li><a href="beGuest.html"><i class="iconfont">&#xe619;</i><span>做客</span></a></li>
+          <li><a href="commun.html"><i class="iconfont">&#xe61a;</i><span>交流</span></a></li>
+          <li class="current"><a href="help.html"><i class="iconfont">&#xe61b;</i><span>帮助</span></a></li>
+        </ul>
+    </div>
+</div>
+</body>
+<script type="text/javascript" data-main="../js/my/help/help" src="../js/require.js"></script>
+</html>

@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui">
+<meta name="format-detection" content="telephone=no" />
+<title>互助客</title>
+<link rel="shortcut icon" href="../images/favicon.ico" />
+<link rel="stylesheet" type="text/css" href="iconfont/iconfont.css" />
+<link rel="stylesheet" type="text/css" href="../css/main.css" />
+</head>
+
+<body>
+<div class="givehelp wrap">
+	<div class="secheader pr">
+    	<a href="index.html"><i class="iconfont">&#xe629;</i></a>
+        <span>帮助记录</span>
+    </div>
+    <div class="conWrap">
+        <div class="headerBl"></div>
+        <div class="tripInfo">
+        <ul id="givehelpul">
+        <script id="givehelptpl" type="text/template">
+    {@each content as tHelpInfoReply,index}
+            <li>
+                <ul>
+                  <li class="liHover"><a href="#">${tHelpInfoReply.createTime|datebuild}<span class="fr">
+    {@if tHelpInfoReply.tHelpInfo.state<2}
+    待回应
+    {@else if tHelpInfoReply.tHelpInfo.state>=2&&tHelpInfoReply.tHelpInfo.state<5}
+    已回应
+    {@else if tHelpInfoReply.tHelpInfo.state>=6&&tHelpInfoReply.tHelpInfo.state<11}
+    已兑现
+    {@/if}
+    
+    <i class="iconfont">&#xe62e;</i></span></a></li>
+                  <li><span>求助语：</span><div>${tHelpInfoReply.tHelpInfo.helpInfo}</div></li>
+                  <li><span>帮助语：</span><div>${tHelpInfoReply.replyInfo}</div></li>
+                  <li><span>悬赏币：</span><div>${tHelpInfoReply.tHelpInfo.coin}</div></li>
+                  <li><span>被帮者：</span><div><i class="portrait"></i>${tHelpInfoReply.tHelpInfo.tUser.nickname}</div></li>
+                  <li class="lastLi oneblue liHover">
+    
+    {@if tHelpInfoReply.tHelpInfo.state<2}
+    <a href="#">取消帮助</a>
+    
+    
+    {@else if tHelpInfoReply.tHelpInfo.state>=2&&tHelpInfoReply.tHelpInfo.state<5}
+        {@if tHelpInfoReply.tHelpInfo.helpUserId==tHelpInfoReply.userId}
+            {@if tHelpInfoReply.tHelpInfo.state==2}
+                <a class="helpreplyfinishbtn" data-help-info-id="${tHelpInfoReply.tHelpInfo.id}" href="#">帮助完成</a>
+            {@else if tHelpInfoReply.tHelpInfo.state>2&&tHelpInfoReply.tHelpInfo.state<5}
+                <a href="#">提醒兑现悬赏</a>
+            {@/if}
+        {@else}
+    
+        {@/if}
+    {@else if tHelpInfoReply.tHelpInfo.state>=6&&tHelpInfoReply.tHelpInfo.state<11}
+    {@/if}
+    </li>
+                </ul>
+            </li>
+    {@/each}
+        </script>
+            <!-- <li>
+                <ul>
+                  <li class="liHover"><a href="#">2015.12.22 13:21:23<span class="fr">待回应<i class="iconfont">&#xe62e;</i></span></a></li>
+                  <li><span>求助语：</span><div>我在海口没地方去了，求收留！</div></li>
+                  <li><span>悬赏币：</span><div>500</div></li>
+                  <li><span>被帮者：</span><div>刘小花</div></li>
+                  <li class="lastLi oneblue liHover"><a href="#">取消帮助</a></li>
+                </ul>
+            </li>
+            <li>
+                <ul>
+                  <li class="liHover"><a href="#">2015.12.22 13:21:23<span class="fr">已回应<i class="iconfont">&#xe62e;</i></span></a></li>
+                  <li><span>求助语：</span><div>我在海口没地方去了，求收留！</div></li>
+                  <li><span>悬赏币：</span><div>500</div></li>
+                  <li><span>被帮者：</span><div>刘小花</div></li>
+                  <li class="lastLi"><a class="liHover">拒绝帮助</a><a class="liHover">提醒兑现悬赏</a></li>
+                </ul>
+            </li>
+            <li>
+                <ul>
+                  <li class="liHover"><a href="#">2015.12.22 13:21:23<span class="fr">已兑现<i class="iconfont">&#xe62e;</i></span></a></li>
+                  <li><span>求助语：</span><div>我在海口没地方去了，求收留！</div></li>
+                  <li><span>悬赏币：</span><div>500</div></li>
+                  <li><span>被帮者：</span><div>张小丰（<span class="blue">13455678899</span>）</div></li>
+                </ul>
+            </li> -->
+        </ul>    
+        </div>
+    </div>
+</div>
+</body>
+<script type="text/javascript" data-main="../js/my/help/givehelp" src="../js/require.js"></script>
+</html>

@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui">
+<meta name="format-detection" content="telephone=no" />
+<title>互助客</title>
+<link rel="shortcut icon" href="../images/favicon.ico" />
+<link rel="stylesheet" type="text/css" href="iconfont/iconfont.css" />
+<link rel="stylesheet" type="text/css" href="../css/main.css" />
+<script type="text/javascript" data-main="../js/my/loginIn" src="../js/require.js"></script>
+</head>
+
+<body>
+<div class="checkTel wrap">
+	<div class="secheader pr">
+    	<a href="perInfo.html"><i class="iconfont">&#xe629;</i></a>
+        <span>验证手机</span>
+    </div>
+    <div class="conWrap">
+        <div class="headerBl"></div>
+        <div class="changeTel loginInp pr">
+          <ul>
+              <li class="li01"><span>手机号码</span><div><input type="text" class="telInp" value="18876543210" disabled="disabled"><span class="checkTxt"></span><button class="sendCd">发送验证码</button></div></li>
+              <li class="li02"><span>&nbsp;&nbsp;&nbsp;验证码</span><div><input class="txtInp grey codeInp" type="text" value="请输入验证码" maxlength="6" onkeyup="value=value.replace(/\s/g,'')"><span class="checkTxt"></span></div></li>
+          </ul>
+        </div>
+        <ul>
+            <li class="btnLi"><button class="blueBtn" onClick="javascript:window.location.href='editTel.html'">验证后可修改手机</button></li>
+        </ul>
+        <p class="noCode">当前号码已不用/丢失，收不到验证码？<br />请联系客服：<a href="tel:0898-68663473" class="blue">0898-68663473</a></p>
+    </div>
+</div>
+</body>
+</html>
+                     

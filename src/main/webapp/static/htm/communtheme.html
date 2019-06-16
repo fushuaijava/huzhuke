@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui">
+<meta name="format-detection" content="telephone=no" />
+<title>互助客</title>
+<link rel="shortcut icon" href="../images/favicon.ico" />
+<link rel="stylesheet" type="text/css" href="iconfont/iconfont.css" />
+<link rel="stylesheet" type="text/css" href="../css/main.css" />
+<script type="text/javascript" data-main="../js/bbs/bbsdetail" src="../js/require.js"></script>
+</head>
+
+<body>
+<div class="communtheme wrap">
+	<div class="secheader header pr">
+    	<a href="commun.html"><i class="iconfont">&#xe629;</i></a>
+        <span>交流主题</span>
+        <span class="pa"><a href="###"><span>举报</span></a></span>
+    </div>
+    <div class="conWrap">
+        <div class="headerBl"></div>
+        <div class="indexCon con" id="bbsdetaildiv">
+		<script id="bbsdetailtpl" type="text/template">
+            <div class="conTop">
+                <span class="fl">
+					{@if tUser.headimg===null}<i class="portrait"></i>{@else}<i class="portrait"  style="background-image:url(${tUser.headimg|photopath})"></i>{@/if}
+				</span>
+                <div class="conTopR">
+                    <p class="p1">${tUser.nickname}<i class="iconfont">&#xe609;</i>
+                        <span class="fr">
+                            <i class="iconfont">&#xe610;</i><em>${praiseCount}</em>
+                            <i class="iconfont">&#xe635;</i><em>${reviceCount}</em>
+                        </span>
+                    </p>
+                    <p class="p2">
+                        <em>LV${tUser.userLevel}</em>
+{@if tUser.isValidInfo==1}<em class="em2">已认证</em>{@/if}
+                        <span class="fr">${createTime|datebuild}</span>
+                    </p>
+                </div>
+            </div>
+            <p class="conTxt">${content}</p>
+            <div class="photoWrap">
+{@if bigImage1!=null&&bigImage1!=""}
+                <div class="photo"><div class="imgWrap"><img src="${bigImage1|photopath}"/></div></div>
+{@/if}
+{@if bigImage2!=null&&bigImage2!=""}
+                <div class="photo"><div class="imgWrap"><img src="${bigImage2|photopath}"/></div></div>
+{@/if}
+{@if bigImage3!=null&&bigImage3!=""}
+                <div class="photo"><div class="imgWrap"><img src="${bigImage3|photopath}"/></div></div>
+{@/if}
+{@if bigImage4!=null&&bigImage4!=""}
+                <div class="photo"><div class="imgWrap"><img src="${bigImage4|photopath}"/></div></div>
+{@/if}
+            </div>
+        </script>
+        </div>
+        <div class="message" id="rbbsrelply">
+            <h2>用户留言</h2>
+			<script id="rbbsrelplytpl" type="text/template">
+            {@each content as bbsReply,index}
+			<div class="conTop">
+				<span class="fl"><i class="portrait"></i></span>
+				<div class="conTopR">
+					<p class="p1">${bbsReply.sendUser.nickname}</p>
+					<p class="p2 pr">
+						<span class="time">${bbsReply.createTime|datebuild}</span>
+						<span class="spanR fr">
+							<a><i class="iconfont">&#xe612;</i></a>
+							{@if bbsReply.reviceCount==0}<a class="replyi" data-id="${bbsReply.id}" data-replyname="${bbsReply.sendUser.nickname}"><i class="iconfont">&#xe635;</i></a>
+							{@else}<a class="replyi" data-id="${bbsReply.id}" data-replyname="${bbsReply.sendUser.nickname}"><i class="iconfont">&#xe635;</i><em>${bbsReply.reviceCount}</em></a>
+							<a data-id="${bbsReply.id}" data-pageid='0' class="moresubreply"><i>更多</i></a>
+							{@/if}
+						</span>
+					</p>
+					<p class="p3">${bbsReply.content}</p>
+				</div>
+			</div>
+            {@/each}
+            </script>
+        </div>
+        <div class="waitMore"><img src="../images/loading.gif">加载中...</div>
+        <div data-pageid="0" data-canload="yes" class="more loadmorepage">点击加载更多</div>
+        <div class="footBl hisBl"></div>
+    </div>
+    <div class="hisfoot">
+	     <!-- <div id="senreplydiv">
+	    <button id="replybbsbtn">回复楼主</button>
+	    	回复<span id="replytouser"></span>:
+	    </div>  -->
+        <input id="replyinfo" type="text" placeholder="回复楼主：">
+        <input id="replyId" type="hidden">
+        <button id="replybtn">回复</button>
+    </div>
+</div>
+<script id="senrbbsrelplytpl" type="text/template">
+{@each content as senbbsReply,index}
+<div class="reply"><p><span class="name">
+${senbbsReply.sendUser.nickname}:</span><span class="blue">回复${senbbsReply.toUser.nickname}</span>${senbbsReply.content}<span class="time">${senbbsReply.createTime|datebuild}
+</span><a class="replyi"><i data-id="${senbbsReply.id}" data-replyname="${senbbsReply.sendUser.nickname}" class="iconfont">&#xe635;</i></a></p></div>
+{@/each}
+</script>
+</body>
+</html>

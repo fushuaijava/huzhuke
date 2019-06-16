@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+</head>
+<body>
+
+</body>
+<script>
+var data={avatarUrl
+		:
+			"https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTLWicO71cIdfkzQsUicZvTeI7RmhdRdWuPU25M6obiaRRTLPpVeXAL1Jribzrlp7z5voBNbHbw46NpwXQ/132",
+			city
+			:
+			"Haikou",
+			country
+			:
+			"China",
+			gender
+			:
+			1,
+			language
+			:
+			"zh_CN",
+			nickName
+			:
+			"啊啊",
+			province
+			:
+			"Hainan",openid:"onDfx5Lk9G_O2-jGPkuALraEFUYM"};
+jQuery.ajax({
+	  type: 'POST',
+	  url: '/zuoke/app/user/wxuser/register',
+	  data: data,
+	  success: function(result){console.log(result)},
+	  dataType: "json"
+	});
+</script>
+</html>

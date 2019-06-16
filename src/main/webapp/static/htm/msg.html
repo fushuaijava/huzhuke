@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui">
+<meta name="format-detection" content="telephone=no" />
+<title>互助客</title>
+<link rel="shortcut icon" href="../images/favicon.ico" />
+<link rel="stylesheet" type="text/css" href="iconfont/iconfont.css" />
+<link rel="stylesheet" type="text/css" href="../css/main.css" />
+</head>
+
+<body>
+<div class="msg wrap">
+	<div class="secheader pr">
+    	<a href="index.html"><i class="iconfont">&#xe629;</i></a>
+        <span>信息</span>
+    </div>
+    <div class="conWrap" id="msgparentdiv">
+        <div class="headerBl"></div>
+        <!-- <div class="indexCon con">
+            <div class="conTop">
+                <span class="fl"><i class="portrait"></i></span>
+                <div class="conTopR">
+                    <p class="p1">Amy<span class="fr">12.22 12:33</span></p>
+                    <p class="p2">
+                        <em>LV8</em><em class="em2">已认证</em>
+                        <a href="#" class="reMsg"><i class="iconfont">&#xe635;</i></a>
+                    </p>
+                    <p class="pCon">请问你这里做客有WIFI吗？</p>
+                </div>
+            </div>
+        </div>
+        <div class="indexCon con">
+            <div class="conTop">
+                <span class="fl"><i class="userOfi portrait iconfont">&#xe60d;</i></span>
+                <div class="conTopR">
+                    <p class="p1">Amy<span class="fr">12.22 12:33</span></p>
+                    <p class="pCon">恭喜您！您提交的身份认证已通过审核！</p>
+                </div>
+            </div>
+        </div> -->
+    <script id="msgtpl" type="text/template">
+    {@each cnts as cnt,index}
+        <div class="indexCon con">
+            <div class="conTop">
+                <span class="fl">
+    {@if cnt.userinfo.headimg===null}<i class="userOfi portrait iconfont">&#xe60d;</i>{@else}<i class="userOfi portrait" style="background-image:url(${cnt.userinfo.headimg|photopath})"></i>{@/if}
+                </span>
+                <div class="conTopR">
+                    <p class="p1">${cnt.userinfo.nickname}<span class="fr">${cnt.time|datebuild}</span></p>
+                    </p>
+                    <p class="pCon">${cnt.msg[0][1]}</p>
+    <p class="p2 pr" style="text-align: right;">
+                    {@if cnt.msgcount!=null&&cnt.msgcount>0}${cnt.msgcount}条未读    {@/if} 
+                    <span data-userid='${cnt.uid|imidbuild}' class="spanR chathe">
+                        <a  style="margin-right: 10px;color: red;">和TA联系</a>
+                    </span>
+    </p>
+    
+                </div>
+            </div>
+        </div>
+    {@/each}
+    </script>
+    </div>
+</div>
+</body>
+<!-- IE8及以下支持JSON -->
+<!--[if lt IE 9]>
+    <script src="https://g.alicdn.com/aliww/ww/json/json.js" charset="utf-8"></script>
+<![endif]-->
+<!-- WSDK-->
+<script src="https://g.alicdn.com/aliww/h5.openim.sdk/1.0.6/scripts/wsdk.js"></script>
+<script type="text/javascript" data-main="../js/my/msg/msg" src="../js/require.js"></script>
+</html>

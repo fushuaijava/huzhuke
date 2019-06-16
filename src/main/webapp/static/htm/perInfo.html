@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui">
+<meta name="format-detection" content="telephone=no" />
+<title>互助客</title>
+<link rel="shortcut icon" href="../images/favicon.ico" />
+<link rel="stylesheet" type="text/css" href="iconfont/iconfont.css" />
+<link rel="stylesheet" type="text/css" href="../css/main.css" />
+<script type="text/javascript" data-main="../js/my/userinfo/perInfo" src="../js/require.js"></script>
+</head>
+
+<body>
+<div class="perInfo wrap">
+    <div class="secheader pr">
+        <a href="index.html"><i class="iconfont">&#xe629;</i></a> <span>个人信息</span>
+    </div>
+    <div class="conWrap" id="userinfodiv">
+        <div class="headerBl"></div>
+		<script id="userinfotpl" type="text/template">
+        <input id="userid" type="hidden" value="${tUser.id}">
+        <div class="perInfoEdit">
+		<ul >
+            <li class="portraitEd"><span>头像</span><em><i class="portrait pr"><div class="fileWrap">
+			{@if tUser.headimg==null}
+			<div id="headimgdiv" class="file"></div>
+			{@else}
+			<div id="headimgdiv" class="file fileImg" style="background-image: url(${tUser.headimg|photopath})"></div>
+			{@/if}
+			</div></i><i class="iconfont">&#xe62e;</i></em></li>
+					<!-- <li class="portraitEd"><span>头像</span><em><i class="portrait iconfont user pr"><input type="file" accept="image/*"></i></i><i class="iconfont">&#xe62e;</em></li> -->
+			<li class="perInfoEditLi"><span>昵称</span><div class="inpWrap"><input id="nickname" type="text" value="${tUser.nickname}"></div></li>
+					<!--<li class="perInfoEditLi"><span>爱好</span><input type="text" value="小札"></li>-->
+					<!--<li class="perInfoEditLi liHover"><a href="checkTel.html"><span>手机号码</span><em>18876543210<i class="iconfont">&#xe62e;</i></em></a></li> -->
+			<li class="perInfoEditLi liHover" id="citychange"><a><span>城市</span><em><b id="province">${tUser.province==null?"":tUser.province}</b>&nbsp;<b id="city">${tUser.city==null?"":tUser.city}</b><i class="iconfont">&#xe62e;</i></em></a></li>            
+			<li class="perInfoEditLi sexEd liHover"><span>性别</span><em><i id="mysex" class="mySex">
+			{@if tUser.gender==1}
+			男
+			{@else}
+			女
+			{@/if}
+			</i><i class="iconfont">&#xe62e;</i></em></li>
+			{@if tUser.isValidInfo==0}
+			<input id="hasvalidinfo" type="hidden" value="yes">
+			{@if tUserinfo==null}
+            <li class="perInfoEditLi realCet"><i class="iconfont">&#xe634;</i><span>实名认证</span></li>
+            <li class="perInfoEditLi"><span>真实姓名</span><div class="inpWrap"><input id="name" type="text" value=""></div></li>
+            <li class="perInfoEditLi"><span>身份证号</span><div class="inpWrap"><input id="idcard" type="text" value="" maxlength="18"></div></li>
+             <li class="perInfoEditLi cardEd">
+                <span>身份证照片上传</span>
+                <div>
+                    <div data-pindex="4" class="fileWrap"><div id="cardImg1" class="file"></div></div>
+                    <div data-pindex="5" class="fileWrap"><div id="cardImg2" class="file"></div></div>
+                </div>
+            </li>
+            <li class="perInfoEditLi"><span>电子邮箱</span><div class="inpWrap"><input id="email" type="text" value=""></div></li>
+            <li class="txtLi"><span class="vamSpan"></span><p>认证信息和您的账号金币有直接关系，请您如实填写，不属实信息不受法律保护。</p></li>
+    {@else}
+            <li class="perInfoEditLi realCet"><i class="iconfont">&#xe634;</i><span>实名认证</span></li>
+            <input id="tUserinfoid" type="hidden" value="${tUserinfo.id}">
+            <li class="perInfoEditLi"><span>真实姓名</span><div class="inpWrap"><input id="name" type="text" value="${tUserinfo.name}"></div></li>
+            <li class="perInfoEditLi"><span>身份证号</span><div class="inpWrap"><input id="idcard" type="text" value="${tUserinfo.idcard}" maxlength="18"></div></li>
+            <li class="perInfoEditLi cardEd">
+                <span>身份证照片上传</span>
+                <div>
+                    <div data-pindex="4" class="fileWrap"><div id="cardImg1" class="file" style="background-image: url(${tUserinfo.cardImg1|photopath})"></div></div>
+                    <div data-pindex="5" class="fileWrap"><div id="cardImg2" class="file" style="background-image: url(${tUserinfo.cardImg2|photopath})"></div></div>
+                </div>				
+            </li>
+            <li class="perInfoEditLi"><span>电子邮箱</span><div class="inpWrap"><input id="email" type="text" value="${tUserinfo.email}"></div></li>
+            <li class="txtLi"><span class="vamSpan"></span><p>认证信息和您的账号金币有直接关系，请您如实填写，不属实信息不受法律保护。</p></li>
+			{@/if}
+			{@else}
+			<input id="hasvalidinfo" type="hidden" value="no">
+			{@/if}
+            <li class="btnLi"><button id="uisubmitbtn" class="blueBtn">保存</button></li>
+		</ul>
+        </div>
+	</div>
+    
+	<!--选择 性别-->
+	<div class="twoSel">
+		<div class="secWrap"></div>
+		<div class="selOp">
+			<ul>
+				{@if tUser.gender==1}
+				<li class="sel1">男</li>
+				<li>女</li>
+				{@else}
+				<li>男</li>
+				<li class="sel1">女</li>
+				{@/if}
+                </ul>
+                <ul>
+                    <li>取消</li>
+                </ul>
+            </div>
+        </div>
+    </script>
+</div>
+</body>
+</html>

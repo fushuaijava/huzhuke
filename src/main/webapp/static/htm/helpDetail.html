@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui">
+<meta name="format-detection" content="telephone=no" />
+<title>互助客</title>
+<link rel="shortcut icon" href="../images/favicon.ico" />
+<link rel="stylesheet" type="text/css" href="iconfont/iconfont.css" />
+<link rel="stylesheet" type="text/css" href="../css/main.css" />
+</head>
+
+<body>
+<div class="helpDetail communtheme">
+	<div class="headerBl"></div>
+	<div class="secheader header pr">
+    	<a href="help.html"><i class="iconfont">&#xe629;</i></a>
+        <span>我要帮TA</span>
+        <span class="pa"><a href="###"><span>举报</span></a></span>
+    </div>
+    <div class="conWrap" id="helpdetaildiv">
+    <script id="helpdetailtpl" type="text/template">
+        <div class="indexCon con">
+            <div class="conTop">
+                <span class="fl"><i class="portrait"></i></span>
+                <div class="conTopR">
+                    <p class="p1">${helpinfo.tUser.nickname}<i class="iconfont">{@if helpinfo.tUser.isvip}&#xe609;{@/if}</i>
+                        <span class="fr">
+                            <i class="iconfont">&#xe616;</i><em>${helpinfo.coin}</em>
+                        </span>
+                    </p>
+                    <p class="p2">
+                        <em>LV${helpinfo.tUser.userLevel}</em>{@if helpinfo.tUser.isValidInfo==1}<em class="em2">已认证</em>{@/if}
+                        <span class="fr">${helpinfo.createTime|datebuild}</span>
+                    </p>
+                </div>
+            </div>
+            <p class="conTxt">${helpinfo.helpInfo}</p>
+			<p class="conTxt">联系电话:${helpinfo.tUser.mobilephone}</p>
+        </div>
+	</script>
+    </div>
+    <div class="message" id="helpreplydiv">
+    	 <h2>用户留言</h2>
+<script id="helpreplytpl" type="text/template">
+{@each content as tHelpInfoReply,index}
+        <div class="conTop">
+            <span class="fl"><i class="portrait"></i></span>
+            <div class="conTopR">
+                <p class="p1">${tHelpInfoReply.tUser.nickname}</p>
+                <p class="p2 pr"><span class="time">${tHelpInfoReply.createTime|datebuild}</span><span data-userid='${tHelpInfoReply.tUser.id}' class="spanR chathe"><a>和TA联系</a></span></p>
+                <p class="p3">${tHelpInfoReply.replyInfo}</p>
+            </div>
+        </div>
+{@/each}
+</script>
+        <!-- <div class="conTop">
+            <span class="fl"><i class="portrait"></i></span>
+            <div class="conTopR">
+                <p class="p1"><span class="name">Amy</span></p>
+                <p class="p2 pr"><span class="time">12.22 17:22</span><span class="spanR"><a><i class="iconfont">&#xe612;</i></a><a><i class="iconfont">&#xe635;</i></a><a class="blue">更多</a></span></p>
+                <p class="p3">很不错的，还想再来做客</p>
+                <div class="reply"><p><span class="name">Mark:</span>我有在前厅的时候看到你哟，你是不是穿的红T恤？<span class="time">17:22</span></p></div>
+                <div class="reply"><p><span class="name">Amy:</span><span class="blue">回复Mark</span>真的咩，那你应该看到的就是我呢，很高兴认识你？<span class="time">17:22</span></p></div>
+            </div>
+        </div>
+        <div class="conTop">
+            <span class="fl"><i class="portrait"></i></span>
+            <div class="conTopR">
+                <p class="p1"><span class="name">Amy</span></p>
+                <p class="p2 pr"><span class="time">12.22 17:22</span><span class="spanR"><a><i class="iconfont">&#xe612;</i></a><a><i class="iconfont">&#xe635;</i></a><a class="blue">更多</a></span></p>
+                <p class="p3">很不错的，还想再来做客</p>
+                <div class="reply"><p><span class="name">Mark:</span>我有在前厅的时候看到你哟，你是不是穿的红T恤？<span class="time">17:22</span></p></div>
+                <div class="reply"><p><span class="name">Amy:</span><span class="blue">回复Mark</span>真的咩，那你应该看到的就是我呢，很高兴认识你？<span class="time">17:22</span></p></div>
+            </div>
+        </div> -->
+    </div>
+    <div class="waitMore"><img src="../images/loading.gif">加载中...</div>
+    <div data-pageid="0" data-canload="yes" class="more  loadmorepage">点击加载更多</div>
+    <div class="error"><div class="secWrap"></div><span><i class="iconfont">&#xe631;</i><em>加载失败！</em></span></div>
+    
+    <div class="footBl hisBl"></div>
+    <div class="hisfoot">
+        <input type="text" value="" id="replyinfo" class="txtInp">
+        <button id="replybtn">回复</button>
+    </div>
+</div>
+<!--<div id="J_demo"></div>-->
+</body>
+
+<script type="text/javascript" data-main="../js/my/help/helpdetail" src="../js/require.js"></script>
+
+</html>

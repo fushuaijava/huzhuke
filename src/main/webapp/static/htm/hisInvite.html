@@ -1,0 +1,170 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui">
+<meta name="format-detection" content="telephone=no" />
+<title>互助客</title>
+<link rel="shortcut icon" href="../images/favicon.ico" />
+<link rel="stylesheet" type="text/css" href="iconfont/iconfont.css" />
+<link rel="stylesheet" type="text/css" href="../css/main.css" />
+
+</head>
+
+<body>
+<div class="hisInvite pInvite wrap">
+    <div class="secheader pr">
+        <a href="beGuest.html"><i class="iconfont">&#xe629;</i></a> <span>TA的邀请</span>
+    </div>
+    <div class="conWrap">
+        <div class="headerBl"></div>
+        <div id="housedetaildiv">
+            <script id="housedetailtpl" type="text/template">
+            <div class="banner" id="banner">
+                <div class="hd">
+                    <ul></ul>
+                </div>
+                <div class="bd">
+                    <ul>
+                    {@if house.compressImage1!=null&&house.compressImage1!=""}
+                                <li><a href="#"><img src="${house.compressImage1|photopath}" /></a></li>
+                    {@/if}
+                    {@if house.compressImage2!=null&&house.compressImage2!=""}
+                                <li><a href="#"><img src="${house.compressImage2|photopath}" /></a></li>
+                    {@/if}
+                    {@if house.compressImage3!=null&&house.compressImage3!=""}
+                                <li><a href="#"><img src="${house.compressImage3|photopath}" /></a></li>
+                    {@/if}
+                    {@if house.compressImage4!=null&&house.compressImage4!=""}
+                                <li><a href="#"><img src="${house.compressImage4|photopath}" /></a></li>
+                    {@/if}
+                    {@if house.compressImage5!=null&&house.compressImage5!=""}
+                                <li><a href="#"><img src="${house.compressImage5|photopath}" /></a></li>
+                    {@/if}
+                    </ul>
+                </div>
+            </div>
+            <div class="indexConWrap">
+                <div class="indexCon con">
+                    <div class="conTop">
+                        <span class="fl">{@if house.tUser.headimg===null}<i class="portrait"></i>{@else}<i class="portrait"  style="background-image:url(${house.tUser.headimg|photopath})"></i>{@/if}</span>
+                        <div class="conTopR">
+                            <p class="p1">${house.tUser.nickname}<i class="iconfont">&#xe609;</i><span class="fr grey">${house.updateTime|datebuild}更新</span></p>
+                            <p class="p2">
+                                <em>LV${house.tUser.userLevel}</em>
+            {@if house.tUser.isValidInfo==1}<em class="em2">已认证</em>{@/if}
+                                <span class="fr">
+                                    <i class="iconfont">&#xe625;</i><em>4.9</em>
+                                    <i class="iconfont">&#xe626;</i><em>30</em>
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="conBot">
+                        <ul>
+                          <li>
+                            <i class="iconfont">&#xe622;</i>
+                            <p>风景名胜：${house.nearby}</p>
+                          </li>
+                          <li>
+                            <i class="iconfont">&#xe623;</i>
+                            <p>特色小吃：${house.cate}</p>
+                          </li>
+                          <li>
+                            <i class="iconfont">&#xe624;</i>
+                            <p>${house.smalldes}</p>
+                          </li>
+                        </ul>
+                        <div class="stayCd">
+                            <table width="100%" border="0" cellspacing="0" cellpadding="0" class="pr">
+                                <tr>
+                                    <td width="45%">住宿条件<span class="pa"></span></td>
+                                    <td width="30%">最低价</td>
+                                    <td width="25%">${house.minCoin/10}元</td>
+                                </tr>
+                                <tr>
+                                    <td>WIFI</td>
+                                    <td>建议价格</td>
+                                    <td>${house.adviseCoin/10}元</td>
+                                </tr>
+                                <tr>
+                                    <td>床</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>热水</td>
+                                    <td>投诉数</td>
+                                    <td>${house.indictment}</td>
+                                </tr>
+                                <tr>
+                                    <td id="mobiletd" data-mobilephone="${house.tUser.mobilephone}"></td>
+                                    <td>可否借宿</td>
+                                    <td>
+                                    {@if house.tUser.isValidInfo==1}
+                                        是
+                                    {@else}
+                                        否
+                                    {@/if}
+                                    </td>			
+                                </tr>
+                            </table>
+                          </div>
+                    </div>
+                </div>
+            </div>
+        </script>
+        </div>
+        <div class="message" id="housecommendiv">
+            <h2>用户留言</h2>
+            <script id="housecommentpl" type="text/template">
+            {@each content as hcomment,index}
+                    <div class="conTop">
+                        <span class="fl"><i class="portrait" style="background-image:url(${hcomment.tUser.headimg|photopath})"></i></span>
+                        <div class="conTopR">
+                            <p class="p1">${hcomment.tUser.nickname}</p>
+                            <p class="p2 pr"><span class="time">${hcomment.createTime|datebuild}</span></p>
+                            <span class="spanR"><a><i class="iconfont">&#xe612;</i></a><a><i class="iconfont">&#xe635;</i></a></span>
+                            <p class="p3">${hcomment.comment}</p>
+                        </div>
+                    </div>
+            {@/each}
+            </script>
+            <!-- <div class="conTop">
+                <span class="fl"><i class="portrait"></i></span>
+                <div class="conTopR">
+                    <p class="p1">
+                        <span class="name">Amy</span>
+                    </p>
+                    <p class="p2 pr">
+                        <span class="time">12.22 17:22</span><span class="spanR"><a><i
+                                class="iconfont">&#xe612;</i></a><a><i class="iconfont">&#xe635;</i></a><a
+                            class="blue">更多</a></span>
+                    </p>
+                    <p class="p3">很不错的，还想再来做客</p>
+                    <div class="reply">
+                        <p>
+                            <span class="name">Mark:</span>我有在前厅的时候看到你哟，你是不是穿的红T恤？<span
+                                class="time">17:22</span>
+                        </p>
+                    </div>
+                    <div class="reply">
+                        <p>
+                            <span class="name">Amy:</span><span class="blue">回复Mark</span>真的咩，那你应该看到的就是我呢，很高兴认识你？<span
+                                class="time">17:22</span>
+                        </p>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+        <div class="waitMore"><img src="../images/loading.gif">加载中...</div>
+        <div data-pageid="0" data-canload="yes" class="more loadmorepage">点击加载更多</div>
+        <div class="footBl hisBl"></div>
+    </div>
+    <div class="hisfoot">
+        <a id="findmobile">联系方式</a> <a id="reservebtn">立即预定</a>
+    </div>
+</div>
+</body>
+<script type="text/javascript" data-main="../js/my/house/hisinvite" src="../js/require.js"></script>
+</html>

@@ -1,0 +1,310 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui">
+<title>互助客</title>
+<link rel="shortcut icon" href="../images/favicon.ico" />
+<link rel="stylesheet" type="text/css" href="iconfont/iconfont.css" />
+<link rel="stylesheet" type="text/css" href="../css/main.css" />
+</head>
+
+<body>
+<div class="index">
+
+    <!--侧栏-->
+    <div class="pageLeft">
+      <div class="js_user_content">
+        <div class="leftHead">
+            <span class="vamSpan"></span>
+            <a href="perInfo.html" class="userWrap"><span class="vamSpan"></span><i class="portrait iconfont">&#xe620;</i></a>
+            <span class="userName conTopR">
+                <p class="p1">未登录<i class="iconfont">&#xe609;</i></p>
+                <p class="p2"><em>LV0</em><em class="em2">已认证</em></p>
+            </span>
+        </div>
+        <div class="userInfo">
+            <table class="userInfo1" border="0" cellspacing="0" cellpadding="0" width="100%">
+                <tr class="userInfo_cl1">
+                    <td width="25%">金币数</td>
+                    <td width="25%">VIP</td>
+                    <td width="25%">评价</td>
+                    <td width="25%">投诉数</td>
+                </tr>
+                <tr class="userInfo_cl2">
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+            </table>
+            <div class="userInfo2">
+                <span class="vamSpan"></span>
+                <span><em class="userInfo_cl1">做客数</em><i class="userInfo_cl2 line">0</i></span>
+                <span><em class="userInfo_cl1">接客数</em><i class="userInfo_cl2">0</i></span>
+            </div>
+        </div>
+      </div>
+        <div class="leftNav">
+            <div class="leftNavIn">
+                <ul>
+                  <li><a href="recharge.html"><i class="iconfont">&#xe604;</i><em>充值中心</em></a></li>
+                  <li><a href="trip.html"><i class="iconfont">&#xe605;</i><em>出行安排</em></a></li>
+                  <li><a href="reception.html"><i class="iconfont">&#xe606;</i><em>接待安排</em></a></li>
+                  <li><a href="askhelp.html"><i class="iconfont">&#xe61b;</i><em>求助记录</em></a></li>
+                  <li><a href="givehelp.html"><i class="iconfont">&#xe608;</i><em>帮助记录</em></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="leftExit"><a class="js_loginOut" href="javascript:void(0);">退出</a></div>
+    </div>
+
+
+    <!--首页-->
+    <div class="pageIndex">
+        <div class="headerBl"></div>
+        <div class="js_headBar">
+          <!--未登录header-->
+          <div class="header">
+              <a href="loginIn.html" class="userWrap"><i class="portrait iconfont">&#xe620;</i></a>
+              <a href="loginIn.html" class="fr"><i class="iconfont">&#xe627;</i></a>
+          </div>
+        </div>
+
+        <div class="wrap">
+            <div class="banner" id="banner">
+                <div class="hd">
+                    <ul></ul>
+                </div>
+                <div class="bd">
+                    <ul>
+                        <li><a href="hisInvite.html?id=7"><img src="../images/banner/banner1.jpg" /></a></li>
+                        <li><a href="communtheme.html?id=17"><img src="../images/banner/banner2.jpg" /></a></li>
+<!--                         <li><a href="hisInvite.html?id=7"><img src="../images/banner/banner1.jpg" /></a></li>
+                        <li><a href="communtheme.html?id=17"><img src="../images/banner/banner2.png" /></a></li> -->
+                    </ul>
+                </div>
+            </div>
+            <div class="indexNav">
+                <ul class="ofh">
+                  <li class="li01"><a href="info/coingetanduse.html">金币使用和获取</a></li>
+                  <li class="li02"><a href="info/askhouse.html">邀请做客方法</a></li>
+                  <li class="li03"><a href="info/leader.html">各地盟主招募</a></li>
+                  <li class="li04"><a href="info/complaint.html">联系我们和投诉</a></li>
+                </ul>
+            </div>
+            <div class="indexConWrap">
+                <h2><em></em><span>做客中心</span><a href="beGuest.html" class="fr">更多</a></h2>
+                 <a href="hisInvite.html?id=5">
+                <div class="con">
+                    <div class="conTop">
+                        <span class="fl"><i class="portrait iconfont">&#xe620;</i></span>
+                        <div class="conTopR">
+                            <p class="p1">付立志<i class="iconfont">&#xe609;</i></p>
+                            <p class="p2">
+                                <em>LV8</em><em class="em2">已认证</em>
+                                <span class="fr">
+                                    <i class="iconfont">&#xe625;</i><em>4.9</em>
+                                    <i class="iconfont">&#xe626;</i><em>30</em>
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="conBot">
+                        <ul>
+                          <li>
+                            <i class="iconfont">&#xe622;</i>
+                            <p>风景名胜：假日海滩、万绿园、骑楼</p>
+                          </li>
+                          <li>
+                            <i class="iconfont">&#xe623;</i>
+                            <p>特色小吃：海南粉、鱿鱼、清补凉</p>
+                          </li>
+                          <li>
+                            <i class="iconfont">&#xe624;</i>
+                            <p>大海最显着的特征是广阔独立于海边礁石决眦就让这个歌声再飘的远一些吧</p>
+                          </li>
+                        </ul>
+                    </div>
+                </div>
+                </a>
+                <a href="hisInvite.html?id=2">
+                <div class="con">
+                    <div class="conTop">
+                        <span class="fl"><i class="portrait user iconfont">&#xe620;</i></span>
+                        <div class="conTopR">
+                            <p class="p1">雪原狼<i class="iconfont">&#xe609;</i></p>
+                            <p class="p2">
+                                <em>LV8</em><em class="em2">已认证</em>
+                                <span class="fr">
+                                    <i class="iconfont">&#xe625;</i><em>4.9</em>
+                                    <i class="iconfont">&#xe626;</i><em>30</em>
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="conBot">
+                        <ul>
+                          <li>
+                            <i class="iconfont">&#xe622;</i>
+                            <p>风景名胜：假日海滩、万绿园、骑楼</p>
+                          </li>
+                          <li>
+                            <i class="iconfont">&#xe623;</i>
+                            <p>特色小吃：海南粉、鱿鱼、清补凉</p>
+                          </li>
+                          <li>
+                            <i class="iconfont">&#xe624;</i>
+                            <p>我在海口，假日海滩欢迎你</p>
+                          </li>
+                        </ul>
+                    </div>
+                </div>
+                </a>
+                <a href="hisInvite.html?id=4">
+                <div class="con">
+                    <div class="conTop">
+                        <span class="fl"><i class="portrait user iconfont">&#xe620;</i></span>
+                        <div class="conTopR">
+                            <p class="p1">18976575635<i class="iconfont">&#xe609;</i></p>
+                            <p class="p2">
+                                <em>LV8</em><em class="em2">已认证</em>
+                                <span class="fr">
+                                    <i class="iconfont">&#xe625;</i><em>4.9</em>
+                                    <i class="iconfont">&#xe626;</i><em>30</em>
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="conBot">
+                        <ul>
+                          <li>
+                            <i class="iconfont">&#xe622;</i>
+                            <p>风景名胜：假日海滩、万绿园、骑楼</p>
+                          </li>
+                          <li>
+                            <i class="iconfont">&#xe623;</i>
+                            <p>特色小吃：海南粉、鱿鱼、清补凉</p>
+                          </li>
+                          <li>
+                            <i class="iconfont">&#xe624;</i>
+                            <p>我在海口，假日海滩欢迎你</p>
+                          </li>
+                        </ul>
+                    </div>
+                </div>
+                </a>
+            </div>
+            <div class="waitMore"><img src="../images/loading.gif">加载中...</div>
+            <div class="more">点击加载更多</div>
+        </div>
+        <div class="indexWrap"></div>
+        <div class="error"><div class="secWrap"></div><span><i class="iconfont">&#xe631;</i><em>加载失败！</em></span></div>
+        <div class="footBl"></div>
+        <div class="footer">
+            <ul>
+              <li class="current"><a href="index.html"><i class="iconfont">&#xe62a;</i><span>首页</span></a></li>
+              <li><a href="beGuest.html"><i class="iconfont">&#xe619;</i><span>做客</span></a></li>
+              <li><a href="commun.html"><i class="iconfont">&#xe61a;</i><span>交流</span></a></li>
+              <li><a href="help.html"><i class="iconfont">&#xe61b;</i><span>帮助</span></a></li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+ <!-- IE8及以下支持JSON -->
+    <!--[if lt IE 9]>
+        <script src="https://g.alicdn.com/aliww/ww/json/json.js" charset="utf-8"></script>
+    <![endif]-->
+    <!-- WSDK-->
+    <script src="https://g.alicdn.com/aliww/h5.openim.sdk/1.0.6/scripts/wsdk.js"></script>
+<script type="text/javascript" data-main="../js/index/index" src="../js/require.js"></script>
+<script type="text/template" id="js_userInfo">
+  {# 这里是侧栏用户信息}
+  {@if tUser}
+    <div class="leftHead">
+	  <span class="vamSpan"></span>
+	  <div>
+		<div class="leftHead_top">
+			<span class="vamSpan"></span>
+			<a href="perInfo.html" class="userWrap">{@if tUser.headimg===null}<i class="portrait iconfont">&#xe620;</i>{@else}<i class="portrait" style="background-image:url(${tUser.headimg|photopathbuild})"></i>{@/if}</a>
+        	<span id="dosign">签到</span>
+		</div>
+		<div class="userName conTopR">
+            <p class="p1">{@if tUser.nickname===null}${tUser.userid}{@else}${tUser.nickname}{@/if}<i class="iconfont">&#xe609;</i></p>
+            <p class="p2"><em>LV${tUser.userLevel}</em><em class="em2">已认证</em></p>
+        </div>	
+	  </div>
+    </div>
+    <div class="userInfo">
+        <table class="userInfo1" border="0" cellspacing="0" cellpadding="0" width="100%">
+            <tr class="userInfo_cl1">
+                <td width="25%">金币数</td>
+                <td width="25%">VIP</td>
+                <td width="25%">评价</td>
+                <td width="25%">投诉数</td>
+            </tr>
+            <tr class="userInfo_cl2">
+                <td>${tUser.coin}<br>
+<a style="display: inline-block;padding: 2px 0.4rem;min-width: 3.2rem;color: #fff;background: #f89b08;border-radius: 0.35rem;text-align: center;height: 1.1rem;line-height: 1.1rem;margin-right: 0.24rem;font-size: 0.88rem;" href="../../app/coin/duiba/login">兑换</a></td>
+                <td>${tUser.userLevel}</td>
+                <td>${tUser.score}</td>
+                <td>${tUser.indictment}</td>
+            </tr>
+        </table>
+        <div class="userInfo2">
+            <span class="vamSpan"></span>
+            <span><em class="userInfo_cl1">做客数</em><i class="userInfo_cl2 line">${tUser.visitCount}</i></span>
+            <span><em class="userInfo_cl1">接客数</em><i class="userInfo_cl2">${tUser.acceptCount}</i></span>
+        </div>
+    </div>
+    {@else}
+      <div class="leftHead">
+          <span class="vamSpan"></span>
+          <a href="perInfo.html" class="userWrap"><span class="vamSpan"></span><i class="portrait iconfont">&#xe620;</i></a>
+          <span class="userName conTopR">
+              <p class="p1">未登录<i class="iconfont">&#xe609;</i></p>
+              <p class="p2"><em>LV0</em><em class="em2">已认证</em></p>
+          </span>
+      </div>
+      <div class="userInfo">
+          <table class="userInfo1" border="0" cellspacing="0" cellpadding="0" width="100%">
+              <tr class="userInfo_cl1">
+                  <td width="25%">金币数</td>
+                  <td width="25%">VIP</td>
+                  <td width="25%">评价</td>
+                  <td width="25%">投诉数</td>
+              </tr>
+              <tr class="userInfo_cl2">
+                  <td>0</td>
+                  <td>0</td>
+                  <td>0</td>
+                  <td>0</td>
+              </tr>
+          </table>
+          <div class="userInfo2">
+              <span class="vamSpan"></span>
+              <span><em class="userInfo_cl1">做客数</em><i class="userInfo_cl2 line">0</i></span>
+              <span><em class="userInfo_cl1">接客数</em><i class="userInfo_cl2">0</i></span>
+          </div>
+      </div>
+    {@/if}
+</script>
+<script type="text/template" id="js_headerBar_tpl">
+  {@if tUser}
+  <!--已登录header-->
+  <div class="header">
+      <a id="portrait" class="userWrap" href="javascript:;">{@if tUser.headimg===null}<i class="portrait iconfont">&#xe620;</i>{@else}<i class="portrait" style="background-image:url(${tUser.headimg|photopathbuild})"></i>{@/if}</a>
+      <a href="msg.html" class="fr"><i id="noreadmsg" class="iconfont iconfont_note">&#xe627;</i></a>
+  </div>
+  {@else}
+  <!--未登录header-->
+  <div class="header">
+      <a href="loginIn.html" class="userWrap"><i class="portrait iconfont">&#xe620;</i></a>
+      <a href="loginIn.html" class="fr"><i class="iconfont">&#xe627;</i></a>
+  </div>
+  {@/if}
+</script>
+</body>
+
+</html>
